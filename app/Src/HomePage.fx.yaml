@@ -1,0 +1,183 @@
+"HomePage As screen.'tabletLayout_Tutorial_ver3.0'":
+    BackgroundImage: =homeScreen2
+
+    "'Roster Update Selection' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(0, 18, 107, 1)
+        DisabledColor: =RGBA(0, 18, 107, 1)
+        DisabledFill: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =39
+        Size: =16
+        Text: |-
+            ="REQUEST TYPE:"
+        Width: =328
+        X: =152
+        Y: =299
+        ZIndex: =1
+
+    drpRosterSelection As dropdown:
+        ChevronBackground: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(0, 18, 107, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(0, 18, 107, 1)
+        DisabledColor: =RGBA(0, 18, 107, 1)
+        DisabledFill: =RGBA(0, 18, 107, 1)
+        Height: =52
+        Items: =["Select your answer", "Lateral Transfer", "New Hire Onboarding", "Other Roster Update", "Promotion", "Termination"]
+        Width: =363
+        X: =140
+        Y: =349
+        ZIndex: =2
+
+    btnFirstPageNext As button:
+        BorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), ColorFade(Self.Fill, -15%))
+        Color: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), RGBA(255, 255, 255, 1))
+        Fill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), RGBA(0, 18, 107, 1))
+        Height: =43
+        HoverBorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), ColorFade(Self.BorderColor, 20%))
+        HoverColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), RGBA(255, 255, 255, 1))
+        HoverFill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), RGBA(0, 18, 107, 1))
+        OnSelect: =If(drpRosterSelection.Selected.Value="Select your answer",btnFirstPageNext.AutoDisableOnSelect, If(drpRosterSelection.Selected.Value = "New Hire Onboarding", Navigate(NewHireOnboarding_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Termination", Navigate(Termination_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Promotion", Navigate(Promotion_FirstPage,ScreenTransition.Cover),drpRosterSelection.Selected.Value = "Lateral Transfer", Navigate(LateralTransfer_FirstPage,ScreenTransition.Cover), drpRosterSelection.Selected.Value = "Other Roster Update", Navigate(Others_FirstPage,ScreenTransition.Cover)))
+        PressedBorderColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), Self.Fill)
+        PressedColor: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(211, 211, 211, 1), Self.Fill)
+        PressedFill: =If(drpRosterSelection.Selected.Value = "Select your answer", RGBA(128, 128, 128, 1), Self.Color)
+        Text: ="Next"
+        Width: =167
+        X: =336
+        Y: =423
+        ZIndex: =3
+
+    Reminder As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        Rectangle2 As rectangle:
+            BorderColor: =RGBA(221, 79, 14, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(145, 190, 212, 0.3)
+            Height: =226
+            Width: =684
+            X: =628
+            Y: =142
+            ZIndex: =4
+
+        Label19 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =53
+            Size: =16
+            Text: |-
+                ="Reminders:
+                "
+            Width: =637
+            X: =647
+            Y: =155
+            ZIndex: =5
+
+        Label23 As label:
+            Height: =169
+            Size: =16
+            Text: |-
+                ="• Always review the details of the employee on the review page to make sure that the request would be accurate.
+                
+                • Always double check your 'Sent Items' in Outlook if the request is added, this is another way to double check if the request is successfully sent.
+                
+                "
+            Width: =637
+            X: =652
+            Y: =199
+            ZIndex: =6
+
+    Label19_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =16
+        Text: |-
+            ="Need help? Click the link or scan the QR code below.
+            "
+        Width: =637
+        X: =647
+        Y: =381
+        ZIndex: =11
+
+    "'CS FreshService Group' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(145, 190, 212, 0.3)
+            Height: =304
+            Width: =309
+            X: =628
+            Y: =448
+            ZIndex: =7
+
+        "'CS FreshService' As image":
+            Height: =220
+            Image: ='bit.ly_CSFreshService'
+            Width: =220
+            X: =672
+            Y: =469
+            ZIndex: =8
+
+        Label42 As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 86, 160, 1)
+            FontWeight: =FontWeight.Bold
+            HoverColor: =RGBA (153, 160, 196, 1)
+            OnSelect: |-
+                =Launch("https://bit.ly/CSFreshService");
+            Size: =16
+            Text: ="CS FreshService"
+            Tooltip: ="ClearSource ticketing portal"
+            Underline: =true
+            Width: =220
+            X: =672
+            Y: =689
+            ZIndex: =12
+
+    "'Treehouse Guide Group' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Rectangle3_1 As rectangle:
+            Fill: =RGBA(145, 190, 212, 0.3)
+            Height: =304
+            Width: =309
+            X: =1003
+            Y: =448
+            ZIndex: =9
+
+        Image2 As image:
+            Height: =220
+            Image: ='bit.ly_DynamicRosterUpdateApplication-Treehouse'
+            Width: =220
+            X: =1047
+            Y: =469
+            ZIndex: =10
+
+        Label42_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 86, 160, 1)
+            FontWeight: =FontWeight.Bold
+            HoverColor: =RGBA (153, 160, 196, 1)
+            OnSelect: |-
+                =Launch("https://bit.ly/DynamicRosterUpdateApplication-Treehouse");
+            Size: =16
+            Text: ="Treehouse Guide"
+            Tooltip: ="Dynamic Roster Update Application Treehouse guide"
+            Underline: =true
+            Width: =220
+            X: =1047
+            Y: =689
+            ZIndex: =13
+

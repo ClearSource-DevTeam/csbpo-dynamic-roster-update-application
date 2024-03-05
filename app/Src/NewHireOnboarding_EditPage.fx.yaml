@@ -1,0 +1,810 @@
+"NewHireOnboarding_EditPage As screen.'printableLayout_A4Portrait_ver1.0'":
+    BackgroundImage: ='Untitled design 29'
+    ImagePosition: =ImagePosition.Stretch
+    Width: =1425
+
+    oc3 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =22
+        Text: ="UPDATE NEW HIRE ONBOARDING FORM"
+        Width: =600
+        X: =17
+        Y: =31
+        ZIndex: =5
+
+    galOCEP As gallery.galleryHorizontal:
+        BorderThickness: =1
+        DelayItemLoading: =true
+        Height: =608
+        Items: =If(!IsBlank(tblSelectedID), LookUp(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID))
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =3
+        TemplateSize: =1377
+        Width: =1390
+        X: =17
+        Y: =98
+        ZIndex: =7
+
+        grpOCEPFName As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            txtOCEPFName As text:
+                Color: =RGBA(0, 18, 107, 1)
+                Default: =ThisItem.'FIRST NAME'
+                HintText: ="Input First Name"
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =268
+                X: =17
+                Y: =126
+                ZIndex: =5
+
+            Label5_1 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="FIRST NAME*"
+                Width: =320
+                X: =17
+                Y: =86
+                ZIndex: =7
+
+        grpOCEPMName As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            txtOCEPMName As text:
+                Color: =RGBA(0, 18, 107, 1)
+                Default: =ThisItem.'MIDDLE NAME'
+                HintText: ="(optional)"
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =268
+                X: =17
+                Y: =207
+                ZIndex: =1
+
+            Label5_2 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="MIDDLE NAME (OPTIONAL)"
+                Width: =320
+                X: =17
+                Y: =167
+                ZIndex: =8
+
+        grpOCEPLName As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            txtOCEPLName As text:
+                Color: =RGBA(0, 18, 107, 1)
+                Default: =ThisItem.'LAST NAME'
+                HintText: ="Input Last Name"
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =268
+                X: =17
+                Y: =287
+                ZIndex: =2
+
+            Label5_3 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="LAST NAME *"
+                Width: =320
+                X: =17
+                Y: =247
+                ZIndex: =9
+
+        grpOCEPHireDate As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            dateOCEPHireDate As datepicker:
+                DefaultDate: =ThisItem.'HIRE DATE'
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =368
+                ZIndex: =3
+
+            Label5_4 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="HIRE DATE *"
+                Width: =320
+                X: =17
+                Y: =328
+                ZIndex: =10
+
+        grpOCEPBusUnit As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            cbOCEPBusUnit As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'BUSINESS UNIT'))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbOCEPBusUnit.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =323
+                Y: =48
+                ZIndex: =4
+
+            Label5_5 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="BUSINESS UNIT *"
+                Width: =323
+                X: =323
+                Y: =8
+                ZIndex: =14
+
+        grpOCEPSubUnit As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            cbOCEPSubUnit As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-UNIT'))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOCEPSubUnit.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =323
+                Y: =127
+                ZIndex: =11
+
+            Label5_6 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="SUB-UNIT *"
+                Width: =323
+                X: =323
+                Y: =87
+                ZIndex: =15
+
+        grpOCEPPosition As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            cbOCEPPosition As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),POSITION))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOCEPPosition.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =323
+                Y: =207
+                ZIndex: =12
+
+            Label5_7 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="POSITION *"
+                Width: =323
+                X: =323
+                Y: =169
+                ZIndex: =16
+
+        grpOCEPStatus As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            Label5_9 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="STATUS *"
+                Width: =320
+                X: =323
+                Y: =248
+                ZIndex: =18
+
+            cbOCEPStatus As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),STATUS))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value),cbOCEPStatus.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =323
+                Y: =288
+                ZIndex: =19
+
+        grpOCEPEmpStatus As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =22
+
+            cbOCEPEmpStatus As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'EMPLOYMENT STATUS'))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value)),Value),cbOCEPEmpStatus.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =323
+                Y: =368
+                ZIndex: =13
+
+            Label5_8 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="EMPLOYMENT STATUS *"
+                Width: =323
+                X: =323
+                Y: =328
+                ZIndex: =17
+
+        grpOCEPClient As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =30
+
+            cbOCEPClient As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CLIENT))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOCEPClient.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =323
+                Y: =448
+                ZIndex: =20
+
+            Label5_10 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="CLIENT *"
+                Width: =323
+                X: =323
+                Y: =408
+                ZIndex: =24
+
+        grpOCEPCampaign As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =31
+
+            cbOCEPCampaign As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),CAMPAIGN))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value),cbOCEPCampaign.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =681
+                Y: =48
+                ZIndex: =21
+
+            Label5_11 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="DIVISION *"
+                Width: =323
+                X: =681
+                Y: =8
+                ZIndex: =25
+
+        grpOCEPLOB As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =32
+
+            cbOCEPLOB As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),LOB))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOCEPLOB.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =681
+                Y: =126
+                ZIndex: =22
+
+            Label5_12 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="LOB *"
+                Width: =323
+                X: =681
+                Y: =88
+                ZIndex: =26
+
+        grpOCEPSubLOB As group:
+            Height: =5
+            Width: =5
+            X: =-297
+            Y: =25
+            ZIndex: =33
+
+            cbOCEPSubLOB As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'SUB-LOB'))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),cbOCEPSubLOB.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =681
+                Y: =207
+                ZIndex: =23
+
+            Label5_13 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="SUB-LOB *"
+                Width: =323
+                X: =681
+                Y: =167
+                ZIndex: =27
+
+        grpOCEPSupervisor As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =38
+
+            cbOCEPSupervisor As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SUPERVISOR))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbOCEPSupervisor.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =681
+                Y: =370
+                ZIndex: =28
+
+            Label5_14 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="SUPERVISOR *"
+                Width: =323
+                X: =681
+                Y: =330
+                ZIndex: =32
+
+        grpOCECountry As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =39
+
+            cbOCEPCountry As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),COUNTRY))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPCountry.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =1037
+                Y: =46
+                ZIndex: =29
+
+            Label5_15 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="COUNTRY *"
+                Width: =323
+                X: =1037
+                Y: =6
+                ZIndex: =33
+
+        grpOCEPSite As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =40
+
+            cbOCEPSite As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),SITE))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPSite.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =1037
+                Y: =124
+                ZIndex: =30
+
+            Label5_16 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="SITE *"
+                Width: =323
+                X: =1037
+                Y: =86
+                ZIndex: =34
+
+        grpOCEPBillability As group:
+            Height: =5
+            Width: =5
+            X: =-641
+            Y: =-251
+            ZIndex: =40
+
+            cbOCEPBillability As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),BILLABILITY))
+                DisplayFields: =["Value"]
+                Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCEPBillability.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =681
+                Y: =288
+                ZIndex: =36
+
+            Label5_18 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="BILLABILITY *"
+                Width: =323
+                X: =681
+                Y: =248
+                ZIndex: =39
+
+        grpOCEPRole As group:
+            Height: =5
+            Width: =5
+            X: =-636
+            Y: =25
+            ZIndex: =41
+
+            cbOCEPRole As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),ROLE))
+                DisplayFields: =["Value"]
+                Items: =["Agent", "Support"]
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(["Agent", "Support"],cbOCEPRole.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =1037
+                Y: =205
+                ZIndex: =31
+
+            Label5_17 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="ROLE *"
+                Width: =323
+                X: =1037
+                Y: =165
+                ZIndex: =35
+
+        grpOCEPEmpId As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =42
+
+            Label5 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="EMPLOYEE ID *"
+                Width: =320
+                X: =17
+                Y: =8
+                ZIndex: =6
+
+            txtOCEPEmpId As text:
+                Default: =ThisItem.'EMPLOYEE ID'
+                DisplayMode: =DisplayMode.View
+                HintText: ="e.g., CSPH12345"
+                OnSelect: =Select(Parent)
+                Width: =268
+                X: =17
+                Y: =48
+                ZIndex: =40
+
+        Label54_1 As label:
+            Color: =RGBA(39, 67, 125, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =153
+            Italic: =true
+            Size: =12
+            Text: |-
+                ="Note:
+                
+                The following roles from these Business Units requires Alvaria ID:
+                
+                - Operations
+                - Learning Development (Training)
+                - Quality Assurance
+                - WFM (Admin Access)
+                - BI (Special Access)"
+            Width: =329
+            X: =1037
+            Y: =438
+            ZIndex: =43
+
+        grpOCEPRole_1 As group:
+            Height: =5
+            Width: =5
+            X: =-1000
+            Y: =-59
+            ZIndex: =43
+
+            cbOCEPAlvariaID As combobox:
+                DefaultSelectedItems: =If(!IsBlank(tblSelectedID), ForAll(Filter(colOmniaCreation, 'EMPLOYEE ID'=tblSelectedID),'ALVARIA ID'))
+                DisplayFields: =["Value"]
+                Items: =["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"]
+                OnSelect: =Select(Parent)
+                SearchFields: =["Value"]
+                SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCEPAlvariaID.SearchText,"Value")
+                SelectMultiple: =false
+                Width: =323
+                X: =1037
+                Y: =285
+                ZIndex: =41
+
+            Label5_19 As label:
+                Color: =RGBA(0, 18, 107, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="ALVARIA ID *"
+                Width: =323
+                X: =1037
+                Y: =245
+                ZIndex: =42
+
+        Label5_20 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: ="SUPERVISOR EMP. ID *"
+            Width: =323
+            X: =681
+            Y: =410
+            ZIndex: =44
+
+        grpOCEPInternalEmail As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =44
+
+            Label43 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =Select(Parent)
+                Text: ="INTERNAL EMAIL *"
+                Width: =320
+                X: =17
+                Y: =408
+                ZIndex: =37
+
+            txtOCEPInternalEmail As text:
+                Default: =ThisItem.'INTERNAL EMAIL'
+                HintText: ="firstName.lastName@clearsourcebpo.com"
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =268
+                X: =17
+                Y: =448
+                ZIndex: =38
+
+        txtOCEPSupervisorEmpID As text:
+            Color: =RGBA(0, 18, 107, 1)
+            Default: =ThisItem.'SUPERVISOR EMP ID'
+            HintText: ="e.g., CSPH12345"
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =323
+            X: =681
+            Y: =448
+            ZIndex: =45
+
+        Label5_21 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: ="CLASS NAME *"
+            Width: =323
+            X: =1037
+            Y: =325
+            ZIndex: =46
+
+        txtOCEPClassName As text:
+            Color: =RGBA(0, 18, 107, 1)
+            Default: =ThisItem.'CLASS NAME'
+            HintText: ="e.g., CSPH12345"
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =323
+            X: =1037
+            Y: =370
+            ZIndex: =47
+
+    grpOCEPButtons As group:
+        Height: =5
+        Width: =5
+        X: =-1010
+        Y: =-664
+        ZIndex: =10
+
+        btnOCEPBack As button:
+            Color: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(186, 202, 226, 1)
+            OnSelect: =Navigate(NewHireOnboarding_SecondPage,ScreenTransition.Cover)
+            Text: ="Back"
+            X: =1030
+            Y: =714
+            ZIndex: =8
+
+        btnOCEPUpdate As button:
+            Fill: =RGBA(0, 18, 107, 1)
+            OnSelect: |-
+                =If(
+                    (!IsBlank(txtOCEPEmpId.Text) &&
+                        !IsBlank(txtOCEPFName.Text) &&
+                        !IsBlank(txtOCEPLName.Text) &&
+                        !IsBlank(dateOCEPHireDate.SelectedDate) &&
+                        !IsBlank(txtOCEPInternalEmail.Text) &&
+                        (!IsBlank(cbOCEPBusUnit.Selected.Value) || !IsBlank(cbOCEPBusUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPSubUnit.Selected.Value) || !IsBlank(cbOCEPSubUnit.SearchText)) &&
+                        (!IsBlank(cbOCEPPosition.Selected.Value) || !IsBlank(cbOCEPPosition.SearchText)) &&
+                        (!IsBlank(cbOCEPStatus.Selected.Value) || !IsBlank(cbOCEPStatus.SearchText)) &&
+                        (!IsBlank(cbOCEPEmpStatus.Selected.Value) || !IsBlank(cbOCEPEmpStatus.SearchText)) &&
+                        (!IsBlank(cbOCEPClient.Selected.Value) || !IsBlank(cbOCEPClient.SearchText)) &&
+                        (!IsBlank(cbOCEPCampaign.Selected.Value) || !IsBlank(cbOCEPCampaign.SearchText)) &&
+                        (!IsBlank(cbOCEPSubLOB.Selected.Value) || !IsBlank(cbOCEPSubLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPLOB.Selected.Value) || !IsBlank(cbOCEPLOB.SearchText)) &&
+                        (!IsBlank(cbOCEPBillability.Selected.Value) || !IsBlank(cbOCEPBillability.SearchText)) &&
+                        (!IsBlank(cbOCEPSupervisor.Selected.Value) || !IsBlank(cbOCEPSupervisor.SearchText)) &&
+                        (!IsBlank(cbOCEPCountry.Selected.Value) || !IsBlank(cbOCEPCountry.SearchText)) &&
+                        (!IsBlank(cbOCEPSite.Selected.Value) || !IsBlank(cbOCEPSite.SearchText)) &&
+                        (!IsBlank(cbOCEPRole.Selected.Value) || !IsBlank(cbOCEPRole.SearchText)) &&
+                        (!IsBlank(cbOCEPAlvariaID.Selected.Value) || !IsBlank(cbOCEPAlvariaID.SearchText))
+                    ),
+                    If(
+                        CountRows(
+                            Filter(colOmniaCreation,'EMPLOYEE ID'=txtOCEPEmpId.Text)
+                        ) > 0, 
+                        Collect(colOmniaCreation, {
+                                'EMPLOYEE ID':txtOCEPEmpId.Text,
+                                'FIRST NAME':txtOCEPFName.Text,
+                                'MIDDLE NAME':If(IsBlank(txtOCEPMName.Text), "N/A", txtOCEPMName.Text),
+                                'LAST NAME':txtOCEPLName.Text,
+                                'INTERNAL EMAIL':txtOCEPInternalEmail.Text,
+                                'HIRE DATE':dateOCEPHireDate.SelectedDate,
+                                STATUS:If(IsBlank(cbOCEPStatus.Selected.Value), cbOCEPStatus.SearchText, cbOCEPStatus.Selected.Value), 
+                                'REGULARIZATION DATE':Text(DateAdd(dateOCEPHireDate.SelectedDate, 6, TimeUnit.Months),"yyyy-mm-dd"),
+                                'BUSINESS UNIT':If(IsBlank(cbOCEPBusUnit.Selected.Value), cbOCEPBusUnit.SearchText, cbOCEPBusUnit.Selected.Value), 
+                                'SUB-UNIT':If(IsBlank(cbOCEPSubUnit.Selected.Value), cbOCEPSubUnit.SearchText, cbOCEPSubUnit.Selected.Value),
+                                POSITION:If(IsBlank(cbOCEPPosition.Selected.Value), cbOCEPPosition.SearchText, cbOCEPPosition.Selected.Value), 
+                                'EMPLOYMENT STATUS':If(IsBlank(cbOCEPEmpStatus.Selected.Value), cbOCEPEmpStatus.SearchText, cbOCEPEmpStatus.Selected.Value),
+                                CLIENT:If(IsBlank(cbOCEPClient.Selected.Value), cbOCEPClient.SearchText, cbOCEPClient.Selected.Value),
+                                CAMPAIGN:If(IsBlank(cbOCEPCampaign.Selected.Value), cbOCEPCampaign.SearchText, cbOCEPCampaign.Selected.Value),
+                                'SUB-LOB':If(IsBlank(cbOCEPSubLOB.Selected.Value), cbOCEPSubLOB.SearchText, cbOCEPSubLOB.Selected.Value),
+                                LOB:If(IsBlank(cbOCEPLOB.Selected.Value), cbOCEPLOB.SearchText, cbOCEPLOB.Selected.Value),
+                                BILLABILITY:If(IsBlank(cbOCEPBillability.Selected.Value), cbOCEPBillability.SearchText, cbOCEPBillability.Selected.Value),
+                                SUPERVISOR:If(IsBlank(cbOCEPSupervisor.Selected.Value), cbOCEPSupervisor.SearchText, cbOCEPSupervisor.Selected.Value),
+                                'SUPERVISOR EMP ID': txtOCEPSupervisorEmpID.Text,
+                                COUNTRY:If(IsBlank(cbOCEPCountry.Selected.Value), cbOCEPCountry.SearchText, cbOCEPCountry.Selected.Value),
+                                SITE:If(IsBlank(cbOCEPSite.Selected.Value), cbOCEPSite.SearchText, cbOCEPSite.Selected.Value), 
+                                ROLE:If(IsBlank(cbOCEPRole.Selected.Value), cbOCEPRole.SearchText, cbOCEPRole.Selected.Value),
+                                'ALVARIA ID':If(IsBlank(cbOCEPAlvariaID.Selected.Value), cbOCEPAlvariaID.SearchText, cbOCEPAlvariaID.Selected.Value),
+                                'SUBMITTED BY':User().Email,
+                                'CLASS NAME': txtOCEPClassName.Text
+                            }
+                        );
+                        Notify(Concatenate("Successfully updated ", txtOCEPEmpId.Text, "."), NotificationType.Success) &&
+                        Navigate(NewHireOnboarding_SecondPage);
+                        Remove(colOmniaCreation, LookUp(colOmniaCreation, 'EMPLOYEE ID'=txtOCEPEmpId.Text)),
+                        Notify(Concatenate(txtOCEPEmpId.Text, " does not exist, please go back to the review page or input an existing Employee ID."), NotificationType.Error)
+                    ),
+                    Notify("Please fill out all fields!", NotificationType.Error)
+                )
+            Text: ="Update"
+            X: =1222
+            Y: =714
+            ZIndex: =9
+
