@@ -367,9 +367,9 @@
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),STATUS))
                 DisplayFields: =["Value"]
                 InputTextPlaceholder: ="Choose an option"
-                Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "PHL-MATERNITY LEAVE", "PHL-PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "PHL-SUSPENDED"],Value)
+                Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED"],Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "PHL-MATERNITY LEAVE", "PHL-PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "PHL-SUSPENDED"],Value),cbOTStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED"],Value),cbOTStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =266
