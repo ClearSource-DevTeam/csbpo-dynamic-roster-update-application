@@ -260,7 +260,7 @@
                 Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, STATUS), !IsBlank(Value)),Value),cbOCEPStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value),cbOCEPStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =323
                 X: =323
