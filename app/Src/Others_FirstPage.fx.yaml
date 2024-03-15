@@ -367,9 +367,9 @@
                 DefaultSelectedItems: =If(!IsBlank(SelectedItemIDinOT), ForAll(Filter(Headcount_table, EMPLOYEEID=SelectedItemIDinOT),STATUS))
                 DisplayFields: =["Value"]
                 InputTextPlaceholder: ="Choose an option"
-                Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "PHL-MATERNITY LEAVE", "PHL-PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "PHL-SUSPENDED"],Value)
+                Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "PHL-MATERNITY LEAVE", "PHL-PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "PHL-SUSPENDED"],Value),cbOTStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value),cbOTStatus.SearchText,"Value")
                 SelectMultiple: =false
                 Width: =408.6
                 X: =266
@@ -1044,8 +1044,14 @@
                                     cbOTStatus.Selected.Value = "LOAM (MEDICAL LEAVE OF ABSENCE)" ||
                                     cbOTStatus.Selected.Value = "RETURN-TO-WORK-ORDER" ||
                                     cbOTStatus.Selected.Value = "SUSPENDED" ||
-                                    cbOTStatus.Selected.Value = "PHL-MATERNITY LEAVE" || 
-                                    cbOTStatus.Selected.Value = "PHL-PERSONAL LEAVE OF ABSENCE"
+                                    cbOTStatus.Selected.Value = "MATERNITY LEAVE" || 
+                                    cbOTStatus.Selected.Value = "PERSONAL LEAVE OF ABSENCE" ||
+                                    cbOTStatus.Selected.Value = "GUARANTEED TIME OFF" ||
+                                    cbOTStatus.Selected.Value = "PATERNITY LEAVE" ||
+                                    cbOTStatus.Selected.Value = "BEREAVEMENT LEAVE" ||
+                                    cbOTStatus.Selected.Value = "SOLO PARENT LEAVE (LSOLO)" ||
+                                    cbOTStatus.Selected.Value = "AMERICANS WITH DISABILIES ACT (ADA)" ||
+                                    cbOTStatus.Selected.Value = "FAMILY AND MEDICAL LEAVE ACT (FMLA)" 
                                 ) 
                                 && (IsBlank(dateStart.SelectedDate) || IsBlank(dateEnd.SelectedDate)) ||
                                 (

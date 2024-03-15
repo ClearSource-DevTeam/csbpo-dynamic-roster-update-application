@@ -507,7 +507,7 @@ Termination_FirstPage As screen:
                 AccessibleLabel: ="Select"
                 Default: ="Select Termination Type"
                 Height: =30
-                Items: =["Select your answer","Involuntary Termination", "Voluntary Termination"]
+                Items: =["Select your answer", "Day 1 - No Show", "Involuntary Termination", "Voluntary Termination"]
                 OnChange: =Set(ttype, 1)
                 Size: =10
                 Width: =300
@@ -726,7 +726,8 @@ Termination_FirstPage As screen:
                             'CURRENT ADDRESS': address_input.Text,
                             COMMENT: comment_input.Text,
                             'SUBMITTED BY':User().Email,
-                            'SUPERVISOR EMAIL': LookUp(Headcount_table, EMPLOYEEID =ThisItem.'TEAMLEADEREMP.ID',INTERNALEMAIL)
+                            'SUPERVISOR EMAIL': LookUp(Headcount_table, EMPLOYEEID =ThisItem.'TEAMLEADEREMP.ID',INTERNALEMAIL),
+                            'SUB-LOB': LookUp(Headcount_table, EMPLOYEEID =ThisItem.EMPLOYEEID,'SUB-LOB')
                         });
                         Notify("Successfully saved your changes locally.", NotificationType.Success),
                         Set(ttype, 0),
