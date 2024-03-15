@@ -1,8 +1,8 @@
 [
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
-    "FlowNameId": "c04e8e8e-cc0f-4a81-a3e3-77c930025dc4",
-    "Name": "DEV-Termination",
+    "FlowNameId": "6937b00b-4788-4d50-8f52-051066369d1e",
+    "Name": "PROD-Lateral_Transfer",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": null
