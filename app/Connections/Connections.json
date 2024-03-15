@@ -121,6 +121,12 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+          "value": "shared_office365"
+        },
+        "f001c07c-733c-47b5-9cc0-afa32cdc09de": {
+          "value": "shared_sharepointonline_1"
+        },
         "workflowDisplayName": {
           "value": "PROD-Other_Roster_Update"
         },
@@ -130,6 +136,12 @@
         }
       },
       "parameterHintsV2": {
+        "shared_office365": {
+          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+        },
+        "shared_sharepointonline_1": {
+          "value": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
+        },
         "workflowDisplayName": {
           "value": "PROD-Other_Roster_Update"
         },
