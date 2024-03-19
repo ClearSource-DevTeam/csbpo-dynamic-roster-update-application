@@ -1,4 +1,39 @@
 {
+  "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowDisplayName": {
+          "value": "PROD-Termination"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c04e8e8e-cc0f-4a81-a3e3-77c930025dc4"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowDisplayName": {
+          "value": "PROD-Termination"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c04e8e8e-cc0f-4a81-a3e3-77c930025dc4"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "PROD-Termination"
+    ],
+    "dependencies": {
+      "shared_office365_1": "a98f1ce0-65af-4442-ad24-7697c24f3724",
+      "shared_sharepointonline": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
+    },
+    "dependents": [],
+    "id": "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06"
+  },
   "445c2806-6ace-410f-adcf-5edfa6f6c6cb": {
     "connectionRef": {
       "displayName": "Excel Online (Business)",
@@ -27,6 +62,12 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+          "value": "shared_office365"
+        },
+        "f001c07c-733c-47b5-9cc0-afa32cdc09de": {
+          "value": "shared_sharepointonline_1"
+        },
         "workflowDisplayName": {
           "value": "PROD-New_Hire_Onboarding"
         },
@@ -36,6 +77,12 @@
         }
       },
       "parameterHintsV2": {
+        "shared_office365": {
+          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+        },
+        "shared_sharepointonline_1": {
+          "value": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
+        },
         "workflowDisplayName": {
           "value": "PROD-New_Hire_Onboarding"
         },
@@ -197,53 +244,6 @@
     "dependents": [],
     "id": "9d2cc37f-5727-4e34-938a-04ab2e1962fb"
   },
-  "a27219f3-71da-40d9-93b0-3f466caa1ebc": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
-          "value": "shared_office365_1"
-        },
-        "f001c07c-733c-47b5-9cc0-afa32cdc09de": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowDisplayName": {
-          "value": "PROD-Termination"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "c04e8e8e-cc0f-4a81-a3e3-77c930025dc4"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_office365_1": {
-          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
-        },
-        "shared_sharepointonline": {
-          "value": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
-        },
-        "workflowDisplayName": {
-          "value": "PROD-Termination"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "c04e8e8e-cc0f-4a81-a3e3-77c930025dc4"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "PROD-Termination"
-    ],
-    "dependencies": {
-      "shared_office365_1": "a98f1ce0-65af-4442-ad24-7697c24f3724",
-      "shared_sharepointonline": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
-    },
-    "dependents": [],
-    "id": "a27219f3-71da-40d9-93b0-3f466caa1ebc"
-  },
   "a98f1ce0-65af-4442-ad24-7697c24f3724": {
     "connectionRef": {
       "displayName": "Office 365 Outlook",
@@ -259,8 +259,8 @@
       "6cc33adf-69fa-4baa-8c79-ea529c655339",
       "77168477-7f8b-4be7-bf7b-e48ba083da0c",
       "9d2cc37f-5727-4e34-938a-04ab2e1962fb",
-      "a27219f3-71da-40d9-93b0-3f466caa1ebc",
-      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde"
+      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde",
+      "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06"
     ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   },
@@ -277,8 +277,8 @@
       "6cc33adf-69fa-4baa-8c79-ea529c655339",
       "77168477-7f8b-4be7-bf7b-e48ba083da0c",
       "9d2cc37f-5727-4e34-938a-04ab2e1962fb",
-      "a27219f3-71da-40d9-93b0-3f466caa1ebc",
-      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde"
+      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde",
+      "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06"
     ],
     "id": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
   }
