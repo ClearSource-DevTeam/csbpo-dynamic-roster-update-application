@@ -443,6 +443,14 @@
                 Y: =18
                 ZIndex: =2
 
+            Label79 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="LOB"
+                X: =30
+                Y: =13
+                ZIndex: =3
+
         "'Promotion-Sub_LOB2' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit

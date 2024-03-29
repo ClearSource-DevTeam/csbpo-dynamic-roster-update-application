@@ -651,7 +651,7 @@
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
                     Height: =30
-                    Text: =Parent.DisplayName & " *"
+                    Text: =Parent.DisplayName & "LOB *"
                     Width: =281
                     Wrap: =false
                     X: =15

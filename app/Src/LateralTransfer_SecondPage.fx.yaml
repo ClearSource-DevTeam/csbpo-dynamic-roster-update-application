@@ -419,6 +419,14 @@
                 Y: =20
                 ZIndex: =2
 
+            Label80 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="LO"
+                X: =30
+                Y: =13
+                ZIndex: =3
+
         "'SUB-LOB' As typedDataCard.blankCard":
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
