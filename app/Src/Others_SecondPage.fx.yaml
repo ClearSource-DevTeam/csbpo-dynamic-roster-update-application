@@ -877,6 +877,14 @@
                 Y: =20
                 ZIndex: =2
 
+            Label74 As label:
+                Color: =RGBA(39, 67, 125, 1)
+                FontWeight: =FontWeight.Bold
+                Text: ="LOB"
+                X: =30
+                Y: =13
+                ZIndex: =3
+
         Class_Name As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
