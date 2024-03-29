@@ -1,10 +1,16 @@
 {
-  "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06": {
+  "008b4f93-a63b-49d3-9958-6dbd0fbb748d": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "a98f1ce0-65af-4442-ad24-7697c24f3724": {
+          "value": "shared_office365_1"
+        },
+        "f001c07c-733c-47b5-9cc0-afa32cdc09de": {
+          "value": "shared_sharepointonline"
+        },
         "workflowDisplayName": {
           "value": "PROD-Termination"
         },
@@ -14,6 +20,12 @@
         }
       },
       "parameterHintsV2": {
+        "shared_office365_1": {
+          "value": "a98f1ce0-65af-4442-ad24-7697c24f3724"
+        },
+        "shared_sharepointonline": {
+          "value": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
+        },
         "workflowDisplayName": {
           "value": "PROD-Termination"
         },
@@ -32,7 +44,7 @@
       "shared_sharepointonline": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
     },
     "dependents": [],
-    "id": "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06"
+    "id": "008b4f93-a63b-49d3-9958-6dbd0fbb748d"
   },
   "445c2806-6ace-410f-adcf-5edfa6f6c6cb": {
     "connectionRef": {
@@ -259,8 +271,8 @@
       "6cc33adf-69fa-4baa-8c79-ea529c655339",
       "77168477-7f8b-4be7-bf7b-e48ba083da0c",
       "9d2cc37f-5727-4e34-938a-04ab2e1962fb",
-      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde",
-      "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06"
+      "008b4f93-a63b-49d3-9958-6dbd0fbb748d",
+      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde"
     ],
     "id": "a98f1ce0-65af-4442-ad24-7697c24f3724"
   },
@@ -277,8 +289,8 @@
       "6cc33adf-69fa-4baa-8c79-ea529c655339",
       "77168477-7f8b-4be7-bf7b-e48ba083da0c",
       "9d2cc37f-5727-4e34-938a-04ab2e1962fb",
-      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde",
-      "4250a3e5-d6b4-4618-9b2c-fe6f80fa0a06"
+      "008b4f93-a63b-49d3-9958-6dbd0fbb748d",
+      "64340f7a-1f9b-4f42-94b5-d7af11dd8dde"
     ],
     "id": "f001c07c-733c-47b5-9cc0-afa32cdc09de"
   }
