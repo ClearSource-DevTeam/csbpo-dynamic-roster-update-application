@@ -7,6 +7,7 @@
     Width: =2020
 
     "galleryOT As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        '#CopilotOverlayLabel': ="Filtered"
         BorderThickness: =1
         Default: ={}
         Height: =726
@@ -141,7 +142,7 @@
                 Clear(colOROldLOB);
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
-            SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOTSearchLOB.SearchText,"Value")
+            SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOTSearchLOB.SearchText,Value)
             SelectMultiple: =false
             Width: =401.4
             X: =647
@@ -162,13 +163,13 @@
             Items: |-
                 =//If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value))
                 
-                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID")
+                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value), FIRSTNAME, LASTNAME, EMPLOYEEID)
             OnChange: =Set(SelectedItemIDinOT, "")
             SearchFields: =["EMPLOYEEID"]
             SearchItems: |-
                 =Search(//If(!IsBlank(cbOTSearchLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value))
                 
-                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID"),cbOTOmnia.SearchText,"EMPLOYEEID")
+                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbOTSearchLOB.Selected.Value), FIRSTNAME, LASTNAME, EMPLOYEEID),cbOTOmnia.SearchText,EMPLOYEEID)
             Width: =401.4
             X: =1265
             Y: =90
@@ -201,7 +202,7 @@
             DataField: ="FIRST NAME"
             Default: =ThisItem.FIRSTNAME
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"FIRSTNAME")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,FIRSTNAME)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -261,7 +262,7 @@
                     ="Find items"
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),'cbOTSub-LOB'.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),'cbOTSub-LOB'.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -307,12 +308,12 @@
                 ZIndex: =2
 
         "'BUSINESS UNIT_OTDataCard' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESSUNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, BUSINESSUNIT)
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.BUSINESSUNIT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BUSINESSUNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,BUSINESSUNIT)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -338,7 +339,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbOTBusUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbOTBusUnit.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -369,7 +370,7 @@
                 InputTextPlaceholder: ="Choose an option"
                 Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value),cbOTStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value),cbOTStatus.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =266
@@ -377,12 +378,12 @@
                 ZIndex: =2
 
         "'SUB-UNIT_OTDataCard' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "SUB-UNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, 'SUB-UNIT')
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB-UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,'SUB-UNIT')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -408,7 +409,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOTSubUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOTSubUnit.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -441,12 +442,12 @@
                 ZIndex: =2
 
         CLIENT_OTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "CLIENT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, CLIENT)
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CLIENT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,CLIENT)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -472,7 +473,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOTClient.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOTClient.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -505,12 +506,12 @@
                 ZIndex: =3
 
         BILLABILITY_OTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BILLABILITY")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, BILLABILITY)
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,BILLABILITY)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -536,7 +537,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOTBillability.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOTBillability.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -585,10 +586,10 @@
             DataField: ="MONDAY"
             Default: =ThisItem.MONDAY
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,MONDAY)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "MONDAY")
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, MONDAY)
             Required: =false
             Update: =txtOTSchedule.Text
             Width: =690
@@ -697,12 +698,12 @@
                 ZIndex: =2
 
         SUPERVISOR_OTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, TEAM)
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.TEAM
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,TEAM)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -728,7 +729,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),cbOTSupervisor.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)), Value),cbOTSupervisor.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =266
@@ -760,7 +761,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value),trainer1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER1), !IsBlank(Value)), Value),trainer1.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -773,10 +774,10 @@
             DataField: ="TEAMLEADEREMP_x002e_ID"
             Default: =ThisItem.'TEAMLEADEREMP.ID'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAMLEADEREMP_x002e_ID")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,TEAMLEADEREMP_x002e_ID)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "TEAMLEADEREMP_x002e_ID")
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, TEAMLEADEREMP_x002e_ID)
             Required: =false
             Update: =cbOTSupervisorEmpID.Text
             Width: =690
@@ -863,7 +864,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER2), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER2), !IsBlank(Value)), Value),trainer2.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER2), !IsBlank(Value)), Value),trainer2.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -871,12 +872,12 @@
                 ZIndex: =2
 
         POSITION_OTDataCard As typedDataCard.allowedValuesStringEditCard:
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "POSITION")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, POSITION)
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,POSITION)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -903,7 +904,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOTPosition.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOTPosition.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =266
@@ -934,7 +935,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value),trainer3.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TRAINER3), !IsBlank(Value)), Value),trainer3.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =230
@@ -946,10 +947,10 @@
             DataField: ="LOB"
             Default: =ThisItem.LOB
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,LOB)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, LOB)
             Required: =false
             Update: =cbOTLOB.Selected.Value
             Width: =690
@@ -973,7 +974,7 @@
                 DisplayFields: =["Value"]
                 Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOTLOB.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOTLOB.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =266

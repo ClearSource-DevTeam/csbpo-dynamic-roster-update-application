@@ -16,6 +16,7 @@
         ZIndex: =5
 
     galOCEP As gallery.galleryHorizontal:
+        '#CopilotOverlayLabel': ="Filtered"
         BorderThickness: =1
         DelayItemLoading: =true
         Height: =608
@@ -160,7 +161,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbOCEPBusUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbOCEPBusUnit.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -190,7 +191,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOCEPSubUnit.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbOCEPSubUnit.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -220,7 +221,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOCEPPosition.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbOCEPPosition.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -260,7 +261,7 @@
                 Items: =Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value),cbOCEPStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(["ACTIVE", "FLOATING STATUS", "INACTIVE", "LOAM (MEDICAL LEAVE OF ABSENCE)", "MATERNITY LEAVE", "PATERNITY LEAVE", "BEREAVEMENT LEAVE", "PERSONAL LEAVE OF ABSENCE", "RETURN-TO-WORK-ORDER", "GUARANTEED TIME OFF", "SUSPENDED","SOLO PARENT LEAVE (LSOLO)", "AMERICANS WITH DISABILIES ACT (ADA)", "FAMILY AND MEDICAL LEAVE ACT (FMLA)"],Value),cbOCEPStatus.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -280,7 +281,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value)),Value),cbOCEPEmpStatus.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, EMPLOYMENTSTATUS), !IsBlank(Value)),Value),cbOCEPEmpStatus.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -310,7 +311,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOCEPClient.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbOCEPClient.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =323
@@ -340,7 +341,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value),cbOCEPCampaign.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, DIVISION), !IsBlank(Value)),Value),cbOCEPCampaign.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -370,7 +371,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOCEPLOB.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbOCEPLOB.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -400,7 +401,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),cbOCEPSubLOB.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),cbOCEPSubLOB.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -430,7 +431,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbOCEPSupervisor.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbOCEPSupervisor.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -460,7 +461,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPCountry.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPCountry.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =1037
@@ -490,7 +491,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCEPBillability.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbOCEPBillability.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =681
@@ -520,7 +521,7 @@
                 Items: =Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value)
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPSite.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, COUNTRY), !IsBlank(Value)),Value),cbOCEPSite.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =1037
@@ -550,7 +551,7 @@
                 Items: =["Agent", "Support"]
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(["Agent", "Support"],cbOCEPRole.SearchText,"Value")
+                SearchItems: =Search(["Agent", "Support"],cbOCEPRole.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =1037
@@ -628,7 +629,7 @@
                 Items: =["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"]
                 OnSelect: =Select(Parent)
                 SearchFields: =["Value"]
-                SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCEPAlvariaID.SearchText,"Value")
+                SearchItems: =Search(["Not Required", "Required", "Admin Access (WFM Role)", "Special Access (BI Role)"],cbOCEPAlvariaID.SearchText,Value)
                 SelectMultiple: =false
                 Width: =323
                 X: =1037

@@ -15,6 +15,7 @@ Termination_VerificationPage As screen:
         ZIndex: =1
 
     "EmployeeGallery_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        '#CopilotOverlayLabel': ="Filtered"
         BorderThickness: =1
         Height: =508
         Items: =userVerify
@@ -217,7 +218,7 @@ Termination_VerificationPage As screen:
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,POSITION)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false

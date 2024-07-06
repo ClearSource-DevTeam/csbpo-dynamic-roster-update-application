@@ -24,7 +24,7 @@
         DisabledColor: =RGBA(0, 18, 107, 1)
         DisabledFill: =RGBA(0, 18, 107, 1)
         Height: =52
-        Items: =["Select your answer", "Lateral Transfer", "New Hire Onboarding", "Other Roster Update", "Promotion", "Termination"]
+        Items: =["Select your answer", "Lateral Transfer", "Other Roster Update", "Promotion"]
         Width: =363
         X: =140
         Y: =349

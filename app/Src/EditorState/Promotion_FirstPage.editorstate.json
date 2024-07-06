@@ -9746,7 +9746,9 @@
           "NameMapSourceSchema": "?"
         },
         "MaxTemplateSize",
-        "DelayItemLoading"
+        "DelayItemLoading",
+        "#CopilotOverlayLabel",
+        "#CopilotOverlayVisible"
       ],
       "GalleryTemplateChildName": "galleryTemplate2_4",
       "HasDynamicProperties": false,
@@ -9901,6 +9903,16 @@
         {
           "Category": "Design",
           "PropertyName": "DelayItemLoading",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "#CopilotOverlayLabel",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "#CopilotOverlayVisible",
           "RuleProviderType": "Unknown"
         }
       ],

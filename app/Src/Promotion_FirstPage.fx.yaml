@@ -7,6 +7,7 @@
     Width: =1500
 
     "galleryPRMp1st_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        '#CopilotOverlayLabel': ="Filtered"
         BorderThickness: =1
         Default: ={}
         Height: =841
@@ -139,7 +140,7 @@
                 Clear(colPROldLOB);
             OnSelect: =Notify("Updating this dropdown will clear all your changes.", NotificationType.Warning)
             SearchFields: =["Value"]
-            SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbPRSearchMultipleLOB.SearchText,"Value")
+            SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbPRSearchMultipleLOB.SearchText,Value)
             SelectMultiple: =false
             Width: =401.4
             X: =625
@@ -160,13 +161,13 @@
             Items: |-
                 =//If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbPRSearchMultipleLOB.Selected.Value))
                 
-                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbPRSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID")
+                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbPRSearchMultipleLOB.Selected.Value), FIRSTNAME, LASTNAME, EMPLOYEEID)
             OnChange: =Set(SelectedPRItemID, "")
             SearchFields: =["EMPLOYEEID"]
             SearchItems: |-
                 =Search(//If(!IsBlank(cbPRSearchMultipleLOB.Selected.Value), Filter(Headcount_table, LOBNAMEIT =cbPRSearchMultipleLOB.Selected.Value))
                 
-                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbPRSearchMultipleLOB.Selected.Value), "FIRSTNAME", "LASTNAME", "EMPLOYEEID"),cbPRSearchMultipleOmnia.SearchText,"EMPLOYEEID")
+                ShowColumns(Filter(Headcount_table, LOBNAMEIT=cbPRSearchMultipleLOB.Selected.Value), FIRSTNAME, LASTNAME, EMPLOYEEID),cbPRSearchMultipleOmnia.SearchText,EMPLOYEEID)
             Width: =401.4
             X: =625
             Y: =165
@@ -272,7 +273,7 @@
                 ZIndex: =2
 
         "'BUSINESS UNIT_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BUSINESSUNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, BUSINESSUNIT)
             BorderStyle: =BorderStyle.Solid
             DataField: ="BUSINESS UNIT"
             Default: =ThisItem.BUSINESSUNIT
@@ -304,7 +305,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbPRMultipleBusUnit_1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BUSINESSUNIT), !IsBlank(Value)),Value),cbPRMultipleBusUnit_1.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -312,12 +313,12 @@
                 ZIndex: =2
 
         "'SUB-UNIT_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "SUB-UNIT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, 'SUB-UNIT')
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB-UNIT'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,'SUB-UNIT')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =55
             Required: =false
@@ -344,7 +345,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbPRMultipleSubUnit_1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-UNIT'), !IsBlank(Value)),Value),cbPRMultipleSubUnit_1.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -352,12 +353,12 @@
                 ZIndex: =2
 
         "'POSITION_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "POSITION")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, POSITION)
             BorderStyle: =BorderStyle.Solid
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,POSITION)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =55
             Required: =false
@@ -384,7 +385,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbPRMultiplePosition_1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, POSITION), !IsBlank(Value)),Value),cbPRMultiplePosition_1.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -423,12 +424,12 @@
                 ZIndex: =2
 
         "'CLIENT_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "CLIENT")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, CLIENT)
             BorderStyle: =BorderStyle.Solid
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CLIENT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,CLIENT)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =55
             Required: =false
@@ -456,7 +457,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbPRMultipleClient_1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, CLIENT), !IsBlank(Value)),Value),cbPRMultipleClient_1.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -471,7 +472,7 @@
             DisplayName: ="LOB"
             Fill: =RGBA(0, 0, 0, 0)
             Height: =55
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "LOB")
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, LOB)
             Required: =false
             Update: =cbPRMultipleLOB_2.Selected.Value
             Width: =741
@@ -497,7 +498,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbPRMultipleLOB_2.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, LOBNAMEIT), !IsBlank(Value)),Value),cbPRMultipleLOB_2.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -530,7 +531,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),'cbPRMultipleSub-LOB'.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, 'SUB-LOB'), !IsBlank(Value)),Value),'cbPRMultipleSub-LOB'.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -538,12 +539,12 @@
                 ZIndex: =2
 
         "'BILLABILITY_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "BILLABILITY")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, BILLABILITY)
             BorderStyle: =BorderStyle.Solid
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,BILLABILITY)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =55
             Required: =false
@@ -570,7 +571,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbPRMultipleBillability_1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, BILLABILITY), !IsBlank(Value)),Value),cbPRMultipleBillability_1.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -578,12 +579,12 @@
                 ZIndex: =2
 
         "'SUPERVISOR_DataCard PRMp1_1' As typedDataCard.allowedValuesStringEditCard":
-            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, "TEAM")
+            AllowedValues: =DataSourceInfo([@Headcount_table], DataSourceInfo.AllowedValues, TEAM)
             BorderStyle: =BorderStyle.Solid
             DataField: ="TEAM"
             Default: =ThisItem.TEAM
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,TEAM)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =55
             Required: =false
@@ -611,7 +612,7 @@
                 Height: =35
                 Items: =Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbPRMultipleSupervisor_1.SearchText,"Value")
+                SearchItems: =Search(Sort(Filter(Distinct(Headcount_table, TEAM), !IsBlank(Value)),Value),cbPRMultipleSupervisor_1.SearchText,Value)
                 SelectMultiple: =false
                 Width: =408.6
                 X: =302.8
@@ -623,10 +624,10 @@
             DataField: ="TEAMLEADEREMP_x002e_ID"
             Default: =ThisItem.'TEAMLEADEREMP.ID'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAMLEADEREMP_x002e_ID")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,TEAMLEADEREMP_x002e_ID)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, "TEAMLEADEREMP_x002e_ID")
+            MaxLength: =DataSourceInfo([@Headcount_table], DataSourceInfo.MaxLength, TEAMLEADEREMP_x002e_ID)
             Required: =false
             Update: =cbPRMultipleSupervisorEmpID_1.Text
             Width: =742

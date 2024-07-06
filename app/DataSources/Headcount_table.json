@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
     "CdpRevision": {
       "BaseUrl": "/v2",
-      "LastChangedTimeString": "2024-03-06T17:42:39.1390000Z",
+      "LastChangedTimeString": "2024-07-02T16:43:22.9020000Z",
       "RevisionNumber": 2
     },
     "ConnectedDataSourceInfoNameMapping": {

@@ -7,6 +7,7 @@
     Width: =2020
 
     "galleryLTM_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        '#CopilotOverlayLabel': ="Filtered"
         BorderThickness: =1
         Default: ={}
         Height: =760
@@ -188,7 +189,7 @@
             BorderStyle: =BorderStyle.Solid
             DataField: ="SUB-LOB"
             DisplayMode: =DisplayMode.Edit
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-LOB")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,'SUB-LOB')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Width: =600
@@ -293,7 +294,7 @@
             DataField: ="STATUS"
             Default: =ThisItem.STATUS
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"STATUS")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,STATUS)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -331,7 +332,7 @@
             DataField: ="SUB-UNIT"
             Default: =ThisItem.'SUB UNIT'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"SUB-UNIT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,'SUB-UNIT')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -407,7 +408,7 @@
             DataField: ="CLIENT"
             Default: =ThisItem.CLIENT
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"CLIENT")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,CLIENT)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -483,7 +484,7 @@
             DataField: ="BILLABILITY"
             Default: =ThisItem.BILLABILITY
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"BILLABILITY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,BILLABILITY)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -558,7 +559,7 @@
             DataField: ="MONDAY"
             Default: =ThisItem.SCHEDULE
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"MONDAY")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,MONDAY)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -659,7 +660,7 @@
             DataField: ="TEAM"
             Default: =ThisItem.SUPERVISOR
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"TEAM")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,TEAM)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -779,7 +780,7 @@
             DataField: ="POSITION"
             Default: =ThisItem.POSITION
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"POSITION")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,POSITION)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
@@ -844,7 +845,7 @@
             DataField: ="LOB"
             Default: =ThisItem.LOB
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,"LOB")
+            DisplayName: =DataSourceInfo([@Headcount_table],DataSourceInfo.DisplayName,LOB)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =60
             Required: =false
